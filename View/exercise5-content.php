@@ -8,7 +8,20 @@
       (You may use "skeleton" as the keyword if you can't think of anything else.)</h4>
     <!-- Place Answer Here -->
 
+    <label for="brainwashed">Text Input</label>
+      <input id = "brainwashed">
+      <p id=brainwashedDisplay></p>
+      <button id= "customerQuoteButton" onClick="makeQuote(document.getElementById
+      ('brainwashed').value )"> Click Me! </button>
       
+      <script>
+      function makebrainwashed(input)
+      {
+        //print what was given with
+        document.getElementById("brainwashedDisplay").innerHTML = "\"" + input + "\" -One of our happy customers ";
+      } 
+      
+      </script>
 
     <!-- Place Answer Here -->
   </div>

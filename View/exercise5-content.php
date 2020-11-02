@@ -11,14 +11,14 @@
     <label for="brainwashed">Text Input</label>
       <input id = "brainwashed">
       <p id=brainwashedDisplay></p>
-      <button id= "customerQuoteButton" onClick="makeQuote(document.getElementById
+      <button id= "brainwashedButton" onClick="makebrainwashed(document.getElementById
       ('brainwashed').value )"> Click Me! </button>
       
       <script>
       function makebrainwashed(input)
       {
         //print what was given with
-        document.getElementById("brainwashedDisplay").innerHTML = "\"" + input + "\" -One of our happy customers ";
+        document.getElementById("brainwashedDisplay").innerHTML = input.substring(input.indexOf('skeleton')+8, input.length );
       } 
       
       </script>
@@ -35,7 +35,42 @@
         while another input and button will be responsible for entering how many of that item is stored. 
         (Hint two arrays or a 2 dimensional array is needed)</h4>
     <!-- Place Answer Here -->
+      <!-- Button 1 -->
+    <label for="gameinput">Game Index</label>
+      <input id = "gameinput">
+      <p id=gameDisplay></p>
+      <button id= "gameButton" onClick="get_games(document.getElementById
+      ('gameinput').value )"> Click Me! </button> <br> <br>
+
+     
+      <script>
+      var my_games = ['Age of Empires', 'Civilization IV', 'Minecraft'] ;
+      var game_amount =  ["5", "10", "15"];
+      var inputvar = 0;
+
+      function get_games(input)
+      {
+        inputvar = input;
+        document.getElementById("gameDisplay").innerHTML = my_games [input] + "| Quantity: " + game_amount [input];
+      } 
+    
+      </script>
+
+    <!-- Button 2 -->
+    <label label for="quantityinput">Quantity</label>
+      <input id = "quantityinput">
+      <!-- <p id=quantityDisplay></p> -->
+      <button id= "quantityButton" onClick="get_quantity(document.getElementById
+      ('quantityinput').value )"> Click Me! </button>
+
+      <script>
       
+      function get_quantity(input2)
+      {
+        document.getElementById("gameDisplay").innerHTML = my_games [inputvar] + "| Quantity: " + (game_amount[inputvar] = input2);
+      } 
+      
+      </script>
 
 
     <!-- Place Answer Here -->

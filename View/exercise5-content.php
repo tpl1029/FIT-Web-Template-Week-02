@@ -83,8 +83,24 @@
     <h4>Create a time travel script. Use the necessary code and elements to allow the user to enter a date (in year, month, day, hour, and minute) 
         they would like to travel to. Then display the number of years, days, hours, and minutes they would need to travel to reach that date and time. 
         (Notice month is excluded)</h4>
+
     <!-- Place Answer Here -->
-      
+      <label for="travel_input">Enter a Date and Time:</label>
+      <input id = "travel_input">
+      <p id=travel_display></p>
+      <button id= "travel_button" onClick="get_date(document.getElementById
+      ('travel_input').value )"> Click Me! </button> <br> <br>
+
+     
+      <script>
+      var inputvar = 0;
+
+      function get_date(input)
+      {
+        document.getElementById("travel_display").innerHTML = getFullYear(input), getDate(input), getHours(input), getMinutes(input)
+      }; 
+    
+      </script>
       
 
     <!-- Place Answer Here -->

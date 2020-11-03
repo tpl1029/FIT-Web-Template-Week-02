@@ -7,7 +7,70 @@
       Add the elements and script needed so that a user can enter a number of sides and a number of times to roll; display on a button click.</h4>
     <!-- Place Answer Here -->
       
-      
+    <button id="button" onclick="dice_roll( document.getElementById('Input').value )">Enter</button>
+    <input id="Input">
+    <p id="outcome"></p>
+    <script>
+
+      //Place Class Here (It's best to create classes outside the scope of functions to avoid creating a class with each click, rather than an object)
+        
+      class Dice
+      {
+        //constructor
+        constructor (numSides)
+        {
+          this.side= numSides;          
+        }
+
+        roll()
+        {
+          document.getElementById("outcome").innerHTML = "You rolled a " + this.side
+        }
+      }
+
+      //Place Class Here
+
+      function dice_roll(input) 
+      {
+        //Place Answer Here
+        
+        var sideOne = new Dice("1");
+        var sideTwo = new Dice("2");
+        var sideThree = new Dice("3");
+        var sideFour = new Dice("4");
+        var sidefive = new Dice("5");
+        var sidesix = new Dice("6");
+        
+        // switch to determine which weapon should be fired
+        switch(input)
+        {
+          case sideOne.side:
+          sideOne.roll();
+          break;
+          case sideTwo.side:
+          sideTwo.roll();
+          break;
+          case sideThree.side:
+          sideThree.roll();
+          break;
+          case sideFour.side:
+          sideFour.roll();
+          break;
+          case sideFive.side:
+          sideFive.roll();
+          break;
+          case sideSix.side:
+          sideSix.roll();
+          break;
+          default: 
+          document.getElementById("outcomeEight").innerHTML = "No weapons found";
+        }
+
+        //Place Answer Here
+      }
+    </script>
+
+  </div>
 
     <!-- Place Answer Here -->
   </div>

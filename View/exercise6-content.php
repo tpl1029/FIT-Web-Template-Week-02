@@ -10,40 +10,48 @@
     <input id="sides_input"> <br> <br>
     <label for ="rolls_input"> Number of Rolls</label>
     <input id="rolls_input">
-    <button id="button" onclick="outcome( document.getElementById('sides_input').value, document.getElementById('rolls_input').value )">Enter</button>
-    <p id="outcome"></p>
+    <button id="button" onClick="outcome(document.getElementById('sides_input').value, document.getElementById('rolls_input').value )">Enter</button>
+    <p id="end"></p>
     <script>
 
       //Place Class Here (It's best to create classes outside the scope of functions to avoid creating a class with each click, rather than an object)
-        var sides = 0;
-        var rolls = 0;
-        var myRandom = 0;
-
       class Dice
       {
         //constructor
-        constructor (numSides)
+        constructor (user_sides)
         {
-          this.side= numSides;                    
+          this.sides = user_sides;
         }      
 
         dice_roll() 
             {
-            var myRandom = Math.floor(Math.random() * this.side) + 1;
-             return myRandom             
+            var myRandom = Math.floor(Math.random() * this.sides) + 1;
+            return myRandom;          
           }        
              
       }; //end of class
 
-      function outcome (s_input, r_input)
-      { var sides = s_input;
-        var rolls = r_input;
-        var turn = new Dice(sides);
+      function outcome(user_sides, user_rolls)
+      { 
+        // variables
+          var die = new Dice(user_sides);
+          var final = 0;
+          var strConcatDiceRolls = "";
+          var result = 0;
+        // variables
+
+        // Loop dice rolls
+          for(i=0; i < user_rolls; i++) {
+            result = die.dice_roll();
+            strConcatDiceRolls += result + ", ";
+            final += result;     
+          } 
+        // Loop dice rolls
         
-        for(i=0; i < rolls; i++) {
-          turn.dice_roll();
-          document.getElementById("outcome").innerHTML = myRandom ;
-        }
+        document.getElementById("end").innerHTML = strConcatDiceRolls + "Total = " + final;
+       
+        // variable1 += 5;
+        // variable1 = variable1 + "word";
 
       };
 
@@ -90,7 +98,54 @@
     <h4>Copy Question 1, but add a 'cheaty' attribute that allows the user to also input how cheaty they wish their dice to be. 
       (be creative and useful, it'll earn you more points! :)</h4>
     <!-- Place Answer Here -->
-      
+    <label for ="sides_input"> Number of Sides</label>
+    <input id="sides_input"> <br> <br>
+    <label for ="rolls_input"> Number of Rolls</label>
+    <input id="rolls_input">
+    <button id="button" onClick="outcome(document.getElementById('sides_input').value, document.getElementById('rolls_input').value )">Enter</button>
+    <p id="end"></p>
+    <script>
+
+      //Class
+      class Dice
+      {
+        //constructor
+        constructor (user_sides)
+        {
+          this.sides = user_sides;
+        }      
+
+        dice_roll() 
+            {
+            var myRandom = Math.floor(Math.random() * this.sides) + 1;
+            return myRandom;          
+          }        
+             
+      }; //end of class
+
+      function outcome(user_sides, user_rolls)
+      { 
+        // variables
+          var die = new Dice(user_sides);
+          var final = 0;
+          var strConcatDiceRolls = "";
+          var result = 0;
+        // variables
+
+        // Loop dice rolls
+          for(i=0; i < user_rolls; i++) {
+            result = die.dice_roll();
+            strConcatDiceRolls += result + ", ";
+            final += result;     
+          } 
+        // Loop dice rolls
+        
+        document.getElementById("end").innerHTML = strConcatDiceRolls + "Total = " + final;
+      };
+
+    </script>
+
+  </div>
 
 
     <!-- Place Answer Here -->

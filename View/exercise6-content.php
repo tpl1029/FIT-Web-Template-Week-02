@@ -10,7 +10,7 @@
     <input id="sides_input"> <br> <br>
     <label for ="rolls_input"> Number of Rolls</label>
     <input id="rolls_input">
-    <button id="button" onclick="dice_roll( document.getElementById('sides_input').value, document.getElementById('rolls_input').value )">Enter</button>
+    <button id="button" onclick="outcome( document.getElementById('sides_input').value, document.getElementById('rolls_input').value )">Enter</button>
     <p id="outcome"></p>
     <script>
 
@@ -25,49 +25,60 @@
         constructor (numSides)
         {
           this.side= numSides;                    
-        }
-      }
+        }      
 
-     function roll()
-        {
-          document.getElementById("outcome").innerHTML = "You rolled a " + myRandom
+        dice_roll() 
+            {
+            var myRandom = Math.floor(Math.random() * this.side) + 1;
+             return myRandom             
+          }        
+             
+      }; //end of class
+
+      function outcome (s_input, r_input)
+      { var sides = s_input;
+        var rolls = r_input;
+        var turn = new Dice(sides);
+        
+        for(i=0; i < rolls; i++) {
+          turn.dice_roll();
+          document.getElementById("outcome").innerHTML = myRandom ;
         }
-      
+
+      };
+
 
       //Place Class Here
 
-      function dice_roll(s_input, r_input) 
-      {
-        //Place Answer Here
-        var sides = s_input;
+      // function dice_roll(s_input, r_input) 
+      // {
+      //   //Place Answer Here
+      //   var sides = s_input;
 
-        var rolls = r_input;
+      //   var rolls = r_input;
 
-        var turn = new Dice(sides);
+      //   var turn = new Dice(sides);
         
-        // var sideTwo = new Dice("2");
-        // var sideThree = new Dice("3");
-        // var sideFour = new Dice("4");
-        // var sideFive = new Dice("5");
-        // var sideSix = new Dice("6");
+      //   // var sideTwo = new Dice("2");
+      //   // var sideThree = new Dice("3");
+      //   // var sideFour = new Dice("4");
+      //   // var sideFive = new Dice("5");
+      //   // var sideSix = new Dice("6");
         
-        for(i=0; i < rolls; i++) 
-        {
-          myRandom = Math.floor(Math.random() * turn.side) + 1;
-          
-        } 
-        roll() 
-        
-        
-        
-
-
-
-        //Place Answer Here
-      }
+      //   // for(i=0; i < rolls; i++) 
+      //   // {
+      //   //   myRandom = Math.floor(Math.random() * turn.side) + 1;
+         
+      //   // } 
+           
+               
+      //   //Place Answer Here
+      // }
     </script>
 
   </div>
+
+  
 
     <!-- Place Answer Here -->
   </div>

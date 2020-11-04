@@ -26,12 +26,13 @@
         {
           this.side= numSides;                    
         }
+      }
 
-     roll()
+     function roll()
         {
           document.getElementById("outcome").innerHTML = "You rolled a " + myRandom
         }
-      }
+      
 
       //Place Class Here
 
@@ -54,7 +55,8 @@
         {
           myRandom = Math.floor(Math.random() * turn.side) + 1;
           
-        } print(roll() )
+        } 
+        roll() 
         
         
         

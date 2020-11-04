@@ -6,65 +6,60 @@
     <h4>Create a dice class that holds an int attribute for the number of sides it has, and a roll function that rolls the dice and returns the outcome. 
       Add the elements and script needed so that a user can enter a number of sides and a number of times to roll; display on a button click.</h4>
     <!-- Place Answer Here -->
-      
-    <button id="button" onclick="dice_roll( document.getElementById('Input').value )">Enter</button>
-    <input id="Input">
+    <label for ="sides_input"> Number of Sides</label>
+    <input id="sides_input"> <br> <br>
+    <label for ="rolls_input"> Number of Rolls</label>
+    <input id="rolls_input">
+    <button id="button" onclick="dice_roll( document.getElementById('sides_input').value, document.getElementById('rolls_input').value )">Enter</button>
     <p id="outcome"></p>
     <script>
 
       //Place Class Here (It's best to create classes outside the scope of functions to avoid creating a class with each click, rather than an object)
-        
+        var sides = 0;
+        var rolls = 0;
+        var myRandom = 0;
+
       class Dice
       {
         //constructor
         constructor (numSides)
         {
-          this.side= numSides;          
+          this.side= numSides;                    
         }
 
-        roll()
+     roll()
         {
-          document.getElementById("outcome").innerHTML = "You rolled a " + this.side
+          document.getElementById("outcome").innerHTML = "You rolled a " + myRandom
         }
       }
 
       //Place Class Here
 
-      function dice_roll(input) 
+      function dice_roll(s_input, r_input) 
       {
         //Place Answer Here
+        var sides = s_input;
+
+        var rolls = r_input;
+
+        var turn = new Dice(sides);
         
-        var sideOne = new Dice("1");
-        var sideTwo = new Dice("2");
-        var sideThree = new Dice("3");
-        var sideFour = new Dice("4");
-        var sidefive = new Dice("5");
-        var sidesix = new Dice("6");
+        // var sideTwo = new Dice("2");
+        // var sideThree = new Dice("3");
+        // var sideFour = new Dice("4");
+        // var sideFive = new Dice("5");
+        // var sideSix = new Dice("6");
         
-        // switch to determine which weapon should be fired
-        switch(input)
+        for(i=0; i < rolls; i++) 
         {
-          case sideOne.side:
-          sideOne.roll();
-          break;
-          case sideTwo.side:
-          sideTwo.roll();
-          break;
-          case sideThree.side:
-          sideThree.roll();
-          break;
-          case sideFour.side:
-          sideFour.roll();
-          break;
-          case sideFive.side:
-          sideFive.roll();
-          break;
-          case sideSix.side:
-          sideSix.roll();
-          break;
-          default: 
-          document.getElementById("outcomeEight").innerHTML = "No weapons found";
-        }
+          myRandom = Math.floor(Math.random() * turn.side) + 1;
+          
+        } print(roll() )
+        
+        
+        
+
+
 
         //Place Answer Here
       }

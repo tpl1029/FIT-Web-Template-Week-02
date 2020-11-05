@@ -13,8 +13,20 @@
         border: 2px solid black;
         border-collapse: collapse;
         padding: 5px;
-      }
+             }
       </style>
+
+      <style>
+        th{
+          width: 150px
+        }
+        </style>
+
+      <style>
+        td{
+          width: 150px
+        }
+        </style>
 
       <?php
         //creature array (Name, Challenge rating, armor class, hp, speed, actions)
@@ -24,13 +36,46 @@
           array("Aboleth", "10 (5,900 XP)", "17 (Natural Armor)", "135 (18d10 + 36)", "10 ft., swim 40 ft.", "Multiattack, Tentacle, Tail, Enslave (3/day), Legendary Action"),
           array("Beholder", "13 (10,000 XP)", "18 (natural armor)", "189 (19d10 + 76)", "0 ft., fly 20 ft. (hover)", "Bite, Eye Rays, Legendary Action"),
           array("Tarrasque", "30 (155,000 XP)", "25 (Natural Armor)", "676 (33d20 + 330)", "40 ft.", "Multiattack, Claw, Horns, Tail, Frightful Presence, Swallow, Legendary Action"),
-          //array("Three Kobolds in a Trenchcoat", "1 (200 XP)", "12", "15 (6d6 - 6)", "30 ft.", "Multiattack, Dagger, Sling")
+          array("Three Kobolds in a Trenchcoat", "1 (200 XP)", "12", "15 (6d6 - 6)", "30 ft.", "Multiattack, Dagger, Sling")
         );
       ?>
     <!-- /Given Material -->
 
     <!-- Place Answer Here -->
+<?php
+echo "<table>
+        <tr >
+          <th> Name</th>
+          <th>Challenge Rating</th>
+          <th>Armor Class</th>
+          <th>HP</th>
+          <th>Speed</th>
+          <th>Actions</th>                  
+          </tr>";
+          
 
+
+
+for($index = 0; $index < count($creatureList); $index++)
+{
+echo "
+  
+    
+      <tr>
+        <td>{$creatureList[$index][0]}</td>
+        <td>{$creatureList[$index][1]}</td>
+        <td>{$creatureList[$index][2]}</td>
+        <td>{$creatureList[$index][3]}</td>
+        <td>{$creatureList[$index][4]}</td>
+        <td>{$creatureList[$index][5]}</td>    
+    </tr>";
+
+
+
+}
+echo "    </table>
+  ";
+?>
     
 
     <!-- Place Answer Here -->
@@ -42,8 +87,13 @@
     <h1>Question #F1:</h1>
     <h4>Create the elements and code so that the user can enter a string here and it will appear on the exercise 6 page as a new div for 24 minutes.</h4>
     <!-- Place Answer Here -->
+    <form method="post" action="">
 
-      
+      <label>Type Here:</label>
+      <input type="text" name="cusName">
+      <input type='submit' class='btn-contact-us btn btn-primary' value='Submit'></input>
+
+    </form>
 
     <!-- Place Answer Here -->
   </div>

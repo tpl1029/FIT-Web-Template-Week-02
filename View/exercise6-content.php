@@ -5,7 +5,7 @@
     <h1>Question #1:</h1>
     <h4>Create a dice class that holds an int attribute for the number of sides it has, and a roll function that rolls the dice and returns the outcome. 
       Add the elements and script needed so that a user can enter a number of sides and a number of times to roll; display on a button click.</h4>
-    <!-- Place Answer Here -->
+  <!-- Place Answer Here -->
     <label for ="sides_input"> Number of Sides</label>
     <input id="sides_input"> <br> <br>
     <label for ="rolls_input"> Number of Rolls</label>
@@ -49,46 +49,15 @@
         // Loop dice rolls
         
         document.getElementById("end").innerHTML = strConcatDiceRolls + "Total = " + final;
-       
-        // variable1 += 5;
-        // variable1 = variable1 + "word";
-
-      };
-
-
-      //Place Class Here
-
-      // function dice_roll(s_input, r_input) 
-      // {
-      //   //Place Answer Here
-      //   var sides = s_input;
-
-      //   var rolls = r_input;
-
-      //   var turn = new Dice(sides);
-        
-      //   // var sideTwo = new Dice("2");
-      //   // var sideThree = new Dice("3");
-      //   // var sideFour = new Dice("4");
-      //   // var sideFive = new Dice("5");
-      //   // var sideSix = new Dice("6");
-        
-      //   // for(i=0; i < rolls; i++) 
-      //   // {
-      //   //   myRandom = Math.floor(Math.random() * turn.side) + 1;
-         
-      //   // } 
-           
-               
-      //   //Place Answer Here
-      // }
+             };
     </script>
 
-  </div>
+    </div>
 
   
 
-    <!-- Place Answer Here -->
+  <!-- Place Answer Here -->
+
   </div>
 <!-- Question 1 -->
 
@@ -98,21 +67,23 @@
     <h4>Copy Question 1, but add a 'cheaty' attribute that allows the user to also input how cheaty they wish their dice to be. 
       (be creative and useful, it'll earn you more points! :)</h4>
     <!-- Place Answer Here -->
-    <label for ="sides_input"> Number of Sides</label>
-    <input id="sides_input"> <br> <br>
-    <label for ="rolls_input"> Number of Rolls</label>
-    <input id="rolls_input">
-    <button id="button" onClick="outcome(document.getElementById('sides_input').value, document.getElementById('rolls_input').value )">Enter</button>
-    <p id="end"></p>
+    <label for ="f1_sides_input"> How Many Sides?</label>
+    <input id="f1_sides_input"> <br> <br>
+    <label for ="f1_rolls_input"> How Many Times Do You Want To Roll?</label>
+    <input id="f1_rolls_input"> <br>
+    <label for ="f1_cheat_input"> What Number Would You Like Rolled?</label>
+    <input id="f1_cheat_input">
+    <button id="f1_button" onClick="outcome(document.getElementById('f1_sides_input').value, document.getElementById('f1_rolls_input').value, document.getElementById('f1_cheat_input').value )">Enter</button>
+    <p id="f1_end"></p>
     <script>
 
       //Class
-      class Dice
+      class f1_Dice
       {
         //constructor
-        constructor (user_sides)
+        constructor (f1_user_sides)
         {
-          this.sides = user_sides;
+          this.sides = f1_user_sides;
         }      
 
         dice_roll() 
@@ -123,24 +94,24 @@
              
       }; //end of class
 
-      function outcome(user_sides, user_rolls)
+      function outcome(f1_user_sides, f1_user_rolls, f1_user_cheat)
       { 
         // variables
-          var die = new Dice(user_sides);
+          var die = new f1_Dice(f1_user_sides);
           var final = 0;
           var strConcatDiceRolls = "";
           var result = 0;
         // variables
 
         // Loop dice rolls
-          for(i=0; i < user_rolls; i++) {
+          for(i=0; i < f1_user_rolls; i++) {
             result = die.dice_roll();
             strConcatDiceRolls += result + ", ";
             final += result;     
           } 
         // Loop dice rolls
         
-        document.getElementById("end").innerHTML = strConcatDiceRolls + "Total = " + final;
+        document.getElementById("f1_end").innerHTML = strConcatDiceRolls + "Total = " + final;
       };
 
     </script>
@@ -158,8 +129,64 @@
     <h4>Create the elements and script to accept a username and password. Add a 'register' button that accepts a new username and password and stores it along with some 
       pre-written and hardcoded usernames and passwords. Display 'Access Granted' or some other secret in a p tag if the username and password match, otherwise show an error.</h4>
     <!-- Place Answer Here -->
+    <label for ="user_name"> Username</label>
+    <input id="user_name"> <br> <br>
+    <!-- <label for ="password"> Password</label>
+    <input id="password" , document.getElementById('password').value> -->
+    <button id="button" onClick="check(document.getElementById('user_name').value)">Enter</button>
+    <p id="f2_p"></p>
+    
+    
 
+    <script>
+
+      var username_storage =  ["helloworld", "joeshmoe"];
+      // var = password ["password", "123abc"]
+
+      function check(username)
+      {
+        //declare boolean
+        var isFound = false;
+
+        //convert input to lowercase
+        var lower_username = username.toLowerCase();
+
+        for(index = 0; index < username_storage.length; index++)
+        { if (username_storage[index] == lower_username) {
+            
+            //set boolean to say game is found
+            isFound = true;
+            }         
+
+          }
+
+        if(isFound)
+        {
+          document.getElementById("f2_p").innerHTML = "Match Found!";
+        }
+        else {
+          document.getElementById("f2_p").innerHTML = "No Match :(";
+        }
+
+        }
       
+      // function check(username) 
+      // {
+      //   switch(username) {
+      //   case username_storage:
+      //    document.getElementById("f2_p").innerHTML = "Welcome";
+      //    break;
+      //    default: 
+      //     document.getElementById("f2_p").innerHTML = "Access Denied";
+      // } 
+      
+      // }
+
+
+
+
+    </script>
+
 
     <!-- Place Answer Here -->
   </div>

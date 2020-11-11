@@ -87,10 +87,10 @@ echo "    </table>
     <h1>Question #F1:</h1>
     <h4>Create the elements and code so that the user can enter a string here and it will appear on the exercise 6 page as a new div for 24 minutes.</h4>
     <!-- Place Answer Here -->
-    <form method="post" action="">
+    <form method="post" action="http://localhost/FIT-Web-Course/Week2/FIT-Web-Template-Week-02/exercise6.php">
 
       <label>Type Here:</label>
-      <input type="text" name="cusName">
+      <input type="text" name="Name">
       <input type='submit' class='btn-contact-us btn btn-primary' value='Submit'></input>
 
     </form>

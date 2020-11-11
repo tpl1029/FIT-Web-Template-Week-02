@@ -1,5 +1,17 @@
 <!-- Exercise JavaScript II -->
 
+<div class='student-response'>
+<str>Find IT from exercise 7</str>
+  <?php
+    session_start();
+    if(isset($_POST['Name'])){
+    $_SESSION["name_input"] = trim(htmlentities($_POST['Name']));
+    echo "<p> The name is: {$_SESSION['name_input']}</p>";}
+    else echo "<p> There was a problem :( </p>"
+
+  ?>
+</div>
+
 <!-- Question 1 -->
   <div class='student-response'>
     <h1>Question #1:</h1>
@@ -206,3 +218,5 @@
     <!-- Place Answer Here -->
   </div>
 <!-- Question F3 -->
+
+
